@@ -1,0 +1,26 @@
+\chapter{Literature Review}
+\label{ch:review}
+\vspace{2em}
+
+\section{Classical GAN Research}
+
+Despite Classical GANs showing tremendous success in Generative Modelling and Image Synthesis, they remain inherently difficult to train \cite{nokhwal2024bridging}. Many efforts to counteract these difficulties have led to architectural advances such as the Deep Convolutional GAN (DCGAN), which introduced convolutional layers within the architecture to enhance Data Feature Learning and improve Sample Quality ~\cite{radford2015dcgan}. To address Training Instability, Wasserstein GAN (WGAN) was introduced, replacing the standard loss with the Wasserstein distance for smoother gradients ~\cite{arjovsky2017wgan}. Originally from WGAN, WGAN with Gradient Penalty (WGAN-GP) was introduced to further improve Training Stability through the use of Gradient Penalty techniques ~\cite{gulrajani2017wgangp}.
+
+\section{Quantum GAN Research}
+
+With advancements and breakthroughs in the field of Quantum Computing, different methods to Model Data through properties like Superposition and Entanglement have become increasingly available. Early efforts have shown that parametrised quantum circuits can be used in adversarial training loops, establishing the feasibility of QGANs ~\cite{zoufal2019qgan}. A hybrid of Classical-Quantum GAN has also been theorised, which comprises a Quantum Generator and a Classical Discriminator. Despite the major claims and potential, the studies conducted are extremely limited to synthetic and low-dimensional data with no comparison within the lens of practical contexts.
+
+\section{Quantum-Hybrid GAN Research}
+
+Hybrid Quantum-Classical GANs (HQCGAN) have emerged as a new approach that integrates Quantum Computing with Classical Computing. A HQCGAN utilises a Quantum Circuit-Based Component for generative modelling with a classical deep learning neural network as the discriminator. In theory, this will create a highly accurate and efficient HQCGAN which surpasses the capabilities of Classical GAN.
+
+The key advantages of HQCGAN is based on its ability to construct a latent distribution that is inherently more expressive due to the nature of quantum circuits. This equips the generator to capture complex data distribution in fewer dimensions, leading to efficient training and solving issues such as mode collapse and insufficient high-dimensional sampling without sacrificing diversity and representational power.
+
+Quantum Circuits introduces entanglement natively (Qubits are not independent unlike Classical Bits). This factor implies that some aspects of feature correlation are already embedded in the latent space, leading to faster convergence with fewer data with better results ~\cite{lloyd2018qgan}, achieving a balance between efficiency and quality.
+
+These factors combined with the capabilities of a Classical Discriminator amplifies a stable and efficient GAN architecture where Quantum Noise enhances diversity and classical networks enforce realism. This approach achieves a theoretical balance between Quantum and Classical Computing.
+\section{Research Gaps}
+
+Although QGANs have been proven to work theoretically, little empirical research has been conducted to compare HQCGANs with Classical GANs in standard image generation operations. This raises various key questions that remain unanswered. Do Quantum Generators offer improved Mode Coverage? Is the training more stable? Is the risk of mode collapse reduced?
+
+This paper will address these gaps identified through the training and evaluation of both HQCGAN and Classical GAN. The purpose of this paper is to provide practical insight into the utility and limitations of HQCGANs in image synthesis.

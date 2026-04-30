@@ -1,0 +1,46 @@
+project:
+  name: "Quantum-Enhanced GANs"
+  short_name: "HQCGAN"
+  paper: "https://arxiv.org/abs/2508.09209"
+
+reproducibility:
+  random_seed: 42
+  deterministic_tensorflow: false
+
+data:
+  dataset: "mnist-binary-0-1"
+  classes: [0, 1]
+  normalize_range: [-1, 1]
+  balance_classes: true
+  fid_samples: 500
+
+training:
+  epochs: 150
+  batch_size: 64
+  optimizer: "adam"
+  learning_rate: 0.0002
+  patience: 12
+
+classical_gan:
+  latent_dim: 100
+  hidden_units: 128
+
+hqcgan:
+  qubits: [3, 5, 7]
+  simulator: "qiskit-aer"
+  shots: 1024
+  noise_model:
+    depolarizing: true
+    amplitude_damping: true
+    readout: true
+
+evaluation:
+  metrics:
+    - fid
+    - kid
+  report_every_epochs: 1
+
+artifacts:
+  model_dir: "models"
+  figure_dir: "reports/figures"
+  report_dir: "reports"

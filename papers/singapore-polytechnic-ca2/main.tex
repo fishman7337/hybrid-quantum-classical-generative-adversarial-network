@@ -1,0 +1,50 @@
+%%% enable "DoubleSided" for paper-based submission, i.e. printing, and 
+%%% remove it for the final submission, i.e. electronic thesis
+%\newcommand*{\DoubleSided}{} 
+
+\input{_global_settings.tex}
+
+\begin{document}
+
+\title{QUANTUM-ENHANCED GENERATIVE ADVERSARIAL NETWORKS: COMPARATIVE STUDY OF CLASSICAL AND HYBRID QUANTUM GENERATORS}
+
+\author{KUN MING GOH}
+\prevdegrees{%
+  Dip. Appl. AI \& Analytics, SP}
+\degree{DIPLOMA}
+\field{APPLIED AI \& ANALYTICS}
+\degreeyear{2025}
+\supervisor{Lecturer Gerald CHUA Deng Xiang}
+
+% only involve the examiners in the final submission
+\examiners{%
+  Senior Lecturer SAW Vee-Liem \\
+  Course Chair (DCITP) Wilson QIU Zixuan \\
+  Lead Specialist (AI \& Analytics) Peter LEONG Khai Weng \\
+  Adjunct Lecturer Calvin CHOONG Tze Wei}
+
+\maketitle
+
+\declaredate{11 August 2025}
+\declaresign{\RootPicDir /signature.png} % remove this if you prefer to sign physically
+\declarationpage
+
+\begin{frontmatter}
+  \dedicate{To the people who supported me along my journey}
+  \input{chapters/acknowledgments.tex}
+  \tableofcontents 
+  \input{chapters/abstract.tex}
+  \listoffigures
+  \listoftables
+\end{frontmatter}
+
+\input{chapters/ch-intro.tex}
+\input{chapters/ch-review.tex}
+\input{chapters/ch-rice.tex}
+\input{chapters/ch-noodle.tex}
+\input{chapters/ch-concl.tex}
+
+\bookmarksetup{startatroot}
+\printbibliography[heading=bibintoc]
+
+\end{document}

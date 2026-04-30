@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this research repository, please cite the arXiv paper."
+title: "Quantum-Enhanced Generative Adversarial Networks: Comparative Analysis of Classical and Hybrid Quantum-Classical Generative Adversarial Networks"
+type: article
+authors:
+  - family-names: Goh
+    given-names: Kun Ming
+    orcid: "https://orcid.org/0009-0008-7666-781X"
+    affiliation: "Singapore Polytechnic, School of Computing"
+doi: 10.48550/arXiv.2508.09209
+url: "https://arxiv.org/abs/2508.09209"
+repository-code: "https://github.com/"
+abstract: "This work studies hybrid quantum-classical GANs using noisy parameterised quantum circuits as latent priors and compares them with a classical GAN on binary MNIST."
+keywords:
+  - hybrid quantum-classical computing
+  - generative adversarial networks
+  - quantum machine learning
+  - NISQ
+  - binary MNIST
+license: MIT
+date-released: "2025-08-17"

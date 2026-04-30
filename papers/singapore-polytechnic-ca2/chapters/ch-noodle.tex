@@ -1,0 +1,36 @@
+\SetPicSubDir{ch-Noodle}
+\SetExpSubDir{ch-Noodle}
+
+\chapter{Discussion}
+\label{ch:discussion}
+\vspace{2em}
+
+\section{Interpretation of Results}
+
+The experimental results in Chapter 3 demonstrate both expected and intriguing outcomes with respect to the performance of classical GANs and HQCGANs. The classical GAN consistently achieved the lowest FID and KID, validating its maturity as a generative framework for image synthesis compared to the HQCGANs. However, HQCGANs with higher qubit counts, particularly the 7-qubit variant, exhibited convergence trends that resembled classical performance, especially in terms of FID. This suggests that increasing quantum latent dimensionality leads to improved sample fidelity, likely because of the expanded expressiveness of the latent space due to higher qubit counts.
+
+The training dynamics reinforces this interpretation. Although the 3-qubit HQCGAN showed unstable and higher discriminator losses, the 5-qubit and 7-qubit variants achieved more stable convergence, mirroring the smoother loss curves seen in the classical GAN. These patterns imply that hybrid quantum-classical architectures are not only viable but capable of learning meaningful data distributions, in the scenario that the quantum latent representation is sufficiently rich.
+
+It is also worth noting the computational cost associated with quantum sampling. Despite promising qualitative results, the quantum sampling process introduces overhead due to shot-based sampling and circuit noise. However, given that all HQCGANs used a consistent shot count of 23,808 throughout training, the comparison remains fair and reveals the trade-offs between performance and quantum resource usage. The ability of the 7-qubit HQCGAN to reach near-classical levels with limited quantum dimensionality supports the theoretical claim that quantum systems can encode richer priors even with a relatively low parameter count.
+
+In summary, the findings substantiate the theoretical proposition that hybrid quantum-classical architectures serve as a viable paradigm to bridge the computational divide between classical and quantum systems, effectively leveraging the complementary strengths of both frameworks. The fact that the HQCGANs improve with additional qubits highlights the latent dimensional scalability of quantum circuits, underscoring their potential to serve as powerful generative priors in adversarial settings.
+
+\section{Implications for Quantum Machine Learning (QML)}
+
+The results of this study offer several key insights into the rapidly evolving landscape of QML, particularly in the context of hybrid generative models. First, the viability of HQCGANs as a substitute or a supplement to classical latent priors underscores the relevance of quantum circuits in practical learning scenarios. Unlike QGANs that often require full quantum processing pipelines, hybrid approaches like HQCGANs allow classical discriminators to interpret quantum-sampled latent vectors, thereby lowering the barrier to near-term implementation on NISQ hardware.
+
+Importantly, the observed performance gains with increased qubit dimensionality suggest that even small-scale quantum circuits can introduce beneficial stochasticity and richer priors into generative operations. This aligns with current QML theory that quantum systems may offer exponential representational advantages in encoding high-dimensional probability distributions, especially when classical models are bottlenecked by latent space limitations.
+
+Furthermore, the ability to train such models using backpropagation-compatible TensorFlow-based workflows illustrates a practical pathway for integrating quantum modules into mainstream machine learning pipelines. This opens the door to broader adoption and integration of QML, where hybrid systems could be used to augment classical pipelines in domains such as anomaly detection, data augmentation, and privacy-preserving generative modelling.
+
+In summary, the findings reinforce the notion that hybrid QML systems are not merely theoretical constructs but are applicable in practical, data-driven contexts. As quantum hardware continues to evolve, architectures such as HQCGANs may represent a stepping stone towards the realisation of quantum-accelerated generative AI.
+
+\section{Limitations of the Study}
+
+Despite promising outcomes, this study is subject to several limitations. Firstly, all quantum components were executed using the Qiskit AerSimulator rather than actual quantum hardware. Although this enabled precise control over noise and reproducibility, it fails to capture the full stochastic behaviour and decoherence present in real quantum devices.
+
+Secondly, the study was constrained to a relatively low qubit count (3, 5, and 7 qubits) due to the limitations of the classical simulation resource. This restricts the expressive power of the latent space of the quantum generator, and it remains uncertain how the performance of HQCGAN would scale with higher qubit counts on actual quantum systems.
+
+Furthermore, the experiments were limited to standard GAN architectures. Advanced variants such as Wasserstein GAN (WGAN), Deep Convolutional GAN (DCGAN), or StyleGAN were not employed, thus constraining our ability to benchmark the true relative advantage of HQCGANs over state-of-the-art classical models.
+
+Lastly, both FID and KID rely on features extracted from the InceptionV3 network, which may not be optimal for evaluating synthetic MNIST-style images. This introduces potential bias in the evaluation metrics and may not fully reflect the perceptual quality.

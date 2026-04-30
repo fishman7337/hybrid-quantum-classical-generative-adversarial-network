@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hqcgan-research"
+version = "0.1.0"
+description = "Research utilities for quantum-enhanced GAN experiments."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+  { name = "Goh Kun Ming" }
+]
+keywords = [
+  "GAN",
+  "quantum machine learning",
+  "hybrid quantum-classical",
+  "MNIST",
+  "MLOps"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence"
+]
+dependencies = [
+  "numpy>=1.24",
+  "scipy>=1.10",
+  "PyYAML>=6.0"
+]
+
+[project.optional-dependencies]
+dev = [
+  "nbformat>=5.9",
+  "pytest>=8.0",
+  "ruff>=0.8"
+]
+experiment = [
+  "matplotlib>=3.7",
+  "optuna>=3.0",
+  "pandas>=2.0",
+  "scikit-learn>=1.3",
+  "seaborn>=0.12",
+  "tensorflow>=2.13"
+]
+quantum = [
+  "qiskit>=1.0",
+  "qiskit-aer>=0.13"
+]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2508.09209"
+ORCID = "https://orcid.org/0009-0008-7666-781X"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = ["notebooks/**/*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]

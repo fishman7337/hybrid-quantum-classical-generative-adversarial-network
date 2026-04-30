@@ -1,0 +1,22 @@
+\chapter{Conclusion and Future Work}
+\label{ch:concl}
+
+\section{Conclusion}
+
+This research explored the viability and performance of Hybrid Quantum-Classical Generative Adversarial Networks (HQCGANs) in the context of generative modelling, using a filtered binary version of the MNIST dataset (digits 0 and 1). By integrating quantum-generated latent vectors with classical discriminators, the study sought to investigate whether quantum-enhanced sampling could offer advantages over purely classical GANs.
+
+Classical GANs served as a performance baseline, and HQCGANs were trained with varying qubit counts (3, 5, and 7), each implemented using Qiskit’s AerSimulator with realistic noise modelling. All models shared similar network architectures, allowing fair comparisons. Performance was evaluated using standard generative metrics: Fréchet Inception Distance (FID), Kernel Inception Distance (KID), and Training Efficiency.
+
+The results showed that HQCGANs with 5 and 7 qubits achieved competitive performance relative to the classical baseline, particularly in terms of FID and KID in later training epochs. Notably, the 7-qubit HQCGAN demonstrated near-classical performance, supporting the hypothesis that quantum-enhanced latent representations may improve generative modelling when scaled appropriately. Although the 3-qubit HQCGAN showed limitations due to reduced expressiveness, all HQCGANs remained stable throughout training.
+
+This study offers a proof-of-concept for hybrid quantum-classical generative learning. Although classical models remain dominant under current conditions, the findings highlight the potential of quantum-assisted models, especially as quantum hardware matures. The implications are particularly relevant for tasks where high-dimensional data representations are expensive to learn classically, suggesting that quantum-enhanced sampling could serve as a valuable component in future generative learning pipelines.
+
+\section{Future Research Directions}
+
+Future research can address the limitations stated in Chapter~\ref{ch:discussion}, Section 4.3 and further enhance the validity and impact of HQCGAN studies. A critical next step is to deploy HQCGANs on real quantum hardware, such as IBM Quantum systems or AWS Braket, to evaluate performance under realistic quantum noise and decoherence conditions. This would also allow experimentation with quantum error mitigation techniques to improve reliability.
+
+Moreover, expanding the hybrid framework to incorporate quantum-based discriminators could enable the exploration of fully quantum GAN architectures and their training dynamics. Such an approach could provide deeper insights into the role of quantum entanglement in adversarial learning.
+
+To strengthen empirical comparisons, future work should include state-of-the-art classical GAN variants such as WGAN-GP or StyleGAN. These benchmarks would more rigorously test whether quantum components offer tangible advantages over powerful classical architectures.
+
+Finally, incorporating more sophisticated quantum noise models or even real-time error mitigation techniques would bring the experiments closer to practical deployment and deepen understanding of how HQCGANs function under noisy quantum conditions.

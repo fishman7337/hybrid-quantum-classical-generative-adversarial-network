@@ -1,0 +1,30 @@
+\SetPicSubDir{ch-Intro}
+
+\chapter{Introduction}
+\vspace{2em}
+
+As Generative AI (GenAI) becomes increasingly prevalent in modern society, GANs have emerged as a powerful method for producing realistic data from Latent Noise. Despite their success, classical GANs often face challenges such as Mode Collapse, Unstable Training Dynamics, and Limited Representational Capacity. With advancements in Quantum Computing, Quantum Circuits offer potential improvements to Classical GAN through Higher-dimensional Representations and Entanglement-based Encoding.
+
+\section{Background}
+
+GANs have become a cornerstone of generative modeling in machine learning, especially for image generation tasks. A GAN consists of two competing neural networks, the generator and the discriminator,, trained simultaneously in an adversarial fashion~\cite{goodfellow2014gan}. The Generator role is to map random noise to synthetic data, while the Discriminator evaluates a given data sample and determines if the data sample is real (i.e. from training set) or fake (i.e. produced by Generator). Through the training process, the generator is optimised to 'fool' the Discriminator, while the Discriminator is optimized to classify real and fake data. Through this process, the generator will ideally generate realistic data.
+However, the training process for GAN is notorious for being rigorous and prone to failure modes. One major issue is when the GAN is only capable of producing a small subset of the training data distribution, leading to negatively affected GAN diversity. Another major issue is unstable convergence, which occurs when the ‘delicate’ adversarial training leads to Oscillations or Divergence instead of a stable equilibrium (ie, the discriminator overpowers the generator too quickly, or vice versa), causing the training to fail.
+Given these limitations of Classical GANs and with the advancement in Quantum Technologies, researchers are looking at Quantum Computing as a method to potentially advance Gen AI. Quantum Computing leverages Qubits capable of existing in superposition and entanglement, theoretically allowing for an exponentially large state space to represent probability distributions. Theoretically, a Quantum-based Generator can encode rich distributions in the amplitudes of a Quantum State leading to the process of information in a high-dimensional Hilbert space that grows as $2^n$ for $n$ Qubits. This will allow a quantum generator to theoretically capture more complex patterns and correlations compared to a Classical Generator~\cite{zoufal2019qgan}.
+
+\section{Motivation and Objectives}
+
+The motivation for exploring a hybrid quantum-classical GAN stems from the practical challenges encountered during GAN training, such as Mode Collapse and Unstable Training Dynamics, as well as the theoretical potential of Quantum Computing. In component A of CA2 for ST1504, various classical GAN models exhibited these issues despite numerous mitigation efforts.
+
+Quantum computing introduces new capabilities, such as data representation through Superposition and Entanglement, which opens up opportunities for generative modelling. These quantum properties make it timely to investigate whether a Quantum Generator can enhance the capabilities of classical GANs.
+
+\textbf{Research Question:}  
+\emph{Can a Hybrid Quantum–Classical GAN generate binary digit images with comparable quality and diversity to Classical GANs, and does the Quantum Generator improve training stability or mode coverage?}
+
+\textbf{Research Objectives:}  
+The research experiment aims to:
+\begin{itemize}
+    \item Design and train a QGAN with a quantum generator and a classical discriminator.
+    \item Evaluate and compare QGAN image generation quality, diversity, and training stability with classical GANs.
+    \item Investigate whether quantum properties help mitigate issues such as Mode Collapse and Unstable Training.
+\end{itemize}
+
