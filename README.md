@@ -43,7 +43,10 @@ and reusable helpers, tests, and MLOps conventions have been added around it.
 `-- tests/                   Pytest suite
 ```
 
-Every project folder contains a `README.md` describing its role.
+Every research/content folder contains a `README.md` describing its role.
+Automation-only folders such as `.github/` intentionally contain only workflow
+configuration so GitHub does not render a folder README in place of the root
+project README during navigation.
 
 ## Quick Start
 

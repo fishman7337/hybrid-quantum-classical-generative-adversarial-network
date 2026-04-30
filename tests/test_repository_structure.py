@@ -3,8 +3,6 @@ from __future__ import annotations
 from pathlib import Path
 
 REQUIRED_DIRECTORIES = [
-    ".github",
-    ".github/workflows",
     "configs",
     "data",
     "data/raw",
