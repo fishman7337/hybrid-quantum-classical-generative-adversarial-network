@@ -80,9 +80,7 @@ class ExperimentConfig:
             classes=tuple(data.get("classes", values.get("classes", cls.classes))),
             epochs=int(training.get("epochs", values.get("epochs", cls.epochs))),
             batch_size=int(training.get("batch_size", values.get("batch_size", cls.batch_size))),
-            latent_dim=int(
-                classical.get("latent_dim", values.get("latent_dim", cls.latent_dim))
-            ),
+            latent_dim=int(classical.get("latent_dim", values.get("latent_dim", cls.latent_dim))),
             fid_samples=int(data.get("fid_samples", values.get("fid_samples", cls.fid_samples))),
             qubits=tuple(hqcgan.get("qubits", values.get("qubits", cls.qubits))),
             random_seed=int(

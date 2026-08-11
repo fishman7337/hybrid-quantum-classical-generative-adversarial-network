@@ -15,6 +15,15 @@ Supervising lecturer: Lecturer Gerald Chua Deng Xiang
 
 Public paper: [arXiv:2508.09209](https://arxiv.org/abs/2508.09209)
 
+## Evidence and interpretation
+
+| Evidence-backed measure | Current repository evidence |
+| --- | --- |
+| Experiment matrix | A classical GAN is compared with **3-, 5-, and 7-qubit** HQCGAN variants on binary MNIST digits **0 and 1**. |
+| Reproducibility gate | **13 tests** validate configuration, metrics, repository structure, reproducibility helpers, and stored-error rejection. |
+
+The notebook now defaults to a bounded smoke study and requires `QGAN_FULL_STUDY=1` for the long optimisation. This project is distinct from the separate quantum-computing sustainability report and does not support the report's power-consumption claims.
+
 ## Purpose
 
 The project studies whether hybrid quantum-classical GANs can use noisy
