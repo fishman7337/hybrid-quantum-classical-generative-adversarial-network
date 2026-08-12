@@ -30,10 +30,24 @@ def validate_notebook(path: Path) -> list[str]:
     if not any(cell.get("cell_type") == "code" for cell in notebook.cells):
         problems.append(f"{path}: expected at least one code cell")
 
+    for cell_index, cell in enumerate(notebook.cells, start=1):
+        if cell.get("cell_type") != "code":
+            continue
+        for output in cell.get("outputs", []):
+            if output.get("output_type") != "error":
+                continue
+            error_name = output.get("ename", "Exception")
+            error_value = output.get("evalue", "")
+            detail = f": {error_value}" if error_value else ""
+            problems.append(
+                f"{path}: code cell {cell_index} stores execution error {error_name}{detail}"
+            )
+
     return problems
 
 
 def main() -> int:
+    """Validate every research notebook and return a process exit code."""
     notebook_paths = sorted(Path("notebooks").glob("*.ipynb"))
     if not notebook_paths:
         print("No notebooks found.")
